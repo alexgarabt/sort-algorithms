@@ -7,11 +7,9 @@
 	* Size of the array.
 
 ##  Data Strucuture:
-	1- Class analyzer.
-	2- Abstract class sort algorithm.
-		* Class first algorithtm, (Shell-Sort).
-		* Class first algorithtm, (Cocktail-Sort).
-		* Class first algorithtm, (Merge-Sort).
+	1- Class analyzer, (Launcher.java).
+	2- Class with the sort algorithms, (algorithms.SortAlgorithms.java).
+    3- Class random array generator, (algorithms.RandomArray).
 
 ## Steps to follow:
 	1- Develop the program code.
