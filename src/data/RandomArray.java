@@ -1,4 +1,4 @@
-package algorithms;
+package data;
 import java.util.Random;
 
 
@@ -53,7 +53,7 @@ public class RandomArray {
      * Generates a new random array each time its used.
      * @return A array filed with random numbers between 0 to upperbound.
      */
-    public int[] getArray() {
+    public int[] getNextArray() {
         array = new int[length];
         randomizeArray();
         return array;
