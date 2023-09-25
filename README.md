@@ -1,4 +1,4 @@
-# Analisis of sort algorithms
+# Analisis of sort algorithm
 
 ---
 ## Time Complexity Sort Algorithms:
@@ -29,7 +29,7 @@
 
 ##  Data Strucuture:
 	1- Class analyzer, (Launcher.java).
-	2- Class with the sort algorithms, (algorithms.SortAlgorithms.java).
+	2- Class with the sort algorithm, (algorithm.SortAlgorithms.java).
     3- Class random array generator, (data.RandomArray).
     4- Class with the basic data to anlyze time complexity, (data.Data).
 
