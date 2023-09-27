@@ -1,11 +1,10 @@
 package test;
 import static org.junit.Assert.*;
 import org.junit.Test;
-import java.util.Arrays;
 
 /**
  * Simple class to test the sort functions developed with some edge case.
- * @see ArraySorter
+ * @see ArraySorterSelector
  * @author Alex
  * @version 25/09/2023
  */
@@ -18,7 +17,7 @@ public class ArraySorterTest {
         int[] expected = {1, 2, 3, 4, 5};
 
         // Act
-        ArraySorter.sort(arr);
+        ArraySorterSelector.sort(arr);
 
         // Assert
         assertArrayEquals(expected, arr);
@@ -31,7 +30,7 @@ public class ArraySorterTest {
         int[] expected = {};
 
         // Act
-        ArraySorter.sort(arr);
+        ArraySorterSelector.sort(arr);
 
         // Assert
         assertArrayEquals(expected, arr);
@@ -44,7 +43,7 @@ public class ArraySorterTest {
         int[] expected = {1, 2, 3, 4, 5};
 
         // Act
-        ArraySorter.sort(arr);
+        ArraySorterSelector.sort(arr);
 
         // Assert
         assertArrayEquals(expected, arr);
@@ -57,7 +56,7 @@ public class ArraySorterTest {
         int[] expected = {3, 3, 4, 5, 5};
 
         // Act
-        ArraySorter.sort(arr);
+        ArraySorterSelector.sort(arr);
 
         // Assert
         assertArrayEquals(expected, arr);

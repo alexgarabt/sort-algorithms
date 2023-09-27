@@ -28,13 +28,20 @@
 	* Size of the array.
 
 ##  Data Strucuture:
-	1- Class analyzer, (Launcher.java).
-	2- Class with the sort algorithm, (algorithm.SortAlgorithms.java).
-    3- Class random array generator, (data.RandomArray).
+	1- Class analyzer, (Launcher).
+	2- Class with the sort algorithm, (algorithm.SortAlgorithms).
+    2.1- Class with type of algorithms, (algorithm.typeAlgorithm).
+    3- Class random array generator, (data.RandomIntArray).
     4- Class with the basic data to anlyze time complexity, (data.Data).
+    5- Package test is for test the sort methods.
+        * (test/ArraySorterSelector) Class contais the function contains the sort method to test.
+        * (test/ArraySorterTest) is the actual class with the tests use the method in ArraySorter.
 
 ## Steps to follow:
 	1- Develop the program code.
 	2- Take measures of the differents inputs.
 	3- Analyze the data.
 	4- Draw the conclusions of time and operation complexity.
+
+## TODO:
+    * IMPLEMENT the count of the basic operations in the sort algorithm. (algorithm.SorthAlgorithms)

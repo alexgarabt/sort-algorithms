@@ -3,18 +3,18 @@ import java.util.Random;
 
 
 /**
- * RandomArray class. Generates a random array for a  specific range of numbers and length.
+ * RandomIntArray class. Generates a random array for a  specific range of numbers and length.
  * The range will be from 0 to upperBound. [0,upperbound] in Math notation.
  *
  * @author Alex
  * @author Elena
  * @version 23/09/2023
  */
-public class RandomArray {
+public class RandomIntArray {
 
-    private int length;        /* Length of the generated random array */
+    private final int length;        /* Length of the generated random array */
     private int upperbound;    /* Limit number of the interval of random numbers => [0,upperbound] */
-    private Random random;     /* Random object to generate the random numbers. */
+    private final Random random;     /* Random object to generate the random numbers. */
     private int[] array;       /* Array will store the random numbers.*/
 
     /**
@@ -22,7 +22,7 @@ public class RandomArray {
      * It will select the length as the upperbound.
      * @param length Length of the Random array
      */
-    public RandomArray(int length) {
+    public RandomIntArray(int length) {
         this.length = length;
         this.upperbound = length;
         random = new Random();
@@ -33,7 +33,7 @@ public class RandomArray {
      * @param length Length of the Random array
      * @param maxNumber upperbound for the random numbers generated.
      */
-    public RandomArray(int length, int maxNumber){
+    public RandomIntArray(int length, int maxNumber){
         this.length = length;
         this.upperbound = maxNumber;
         random = new Random();

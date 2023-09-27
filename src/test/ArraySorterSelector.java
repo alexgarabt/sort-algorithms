@@ -1,6 +1,5 @@
 package test;
 import algorithm.SortAlgorithms;
-import java.util.Arrays;
 
 
 /**
@@ -9,12 +8,13 @@ import java.util.Arrays;
  * @author Alex
  * @version 25/09/2023
  */
-public class ArraySorter {
+public class ArraySorterSelector {
 
     public static void sort(int[] arr) {
-        SortAlgorithms.mergeSort(arr,arr.length);
+        SortAlgorithms.shellSort(arr,arr.length);
         /*
          * Others functions to test.
+         * SortAlgorithms.mergeSort(arr,arr.length);
          * SortAlgorithms.cocktailSort(arr,arr.length);
          * SortAlgorithms.shellSort(arr,arr.length);
          */

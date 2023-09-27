@@ -12,7 +12,7 @@ package data;
  */
 public class Data {
 
-    private double time;        /* Number of time used to complete the task */
+    private long time;        /* Number of time used to complete the task in nanoseconds*/
     private int operations;     /* Number of operations needed to complete the task */
     private int arrayLength;    /* Size of the array used in the task */
 
@@ -22,7 +22,7 @@ public class Data {
      * @param operations Number of operations needed to complete the task
      * @param arrayLength Size of the array used in the task
      */
-    public Data(double time, int operations, int arrayLength){
+    public Data(long time, int operations, int arrayLength){
         this.time = time;
         this.operations = operations;
         this.arrayLength = arrayLength;
@@ -32,7 +32,7 @@ public class Data {
      * @param time Number of time used to complete the task
      * @param operations Number of operations needed to complete the task
      */
-    public Data(double time, int operations){
+    public Data(long time, int operations){
         this.time = time;
         this.operations = operations;
     }
@@ -45,7 +45,7 @@ public class Data {
     public double getTime() {
         return time;
     }
-    public void setTime(double time) {
+    public void setTime(long time) {
         this.time = time;
     }
     public int getOperations() {
