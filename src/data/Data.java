@@ -1,5 +1,5 @@
 package data;
-
+import algorithm.typeAlgorithm;
 /**
  * Data class.
  * This class represents the data to analyze the time complexity of the different algorithms.
@@ -12,17 +12,20 @@ package data;
  */
 public class Data {
 
-    private long time;        /* Number of time used to complete the task in nanoseconds*/
-    private int operations;     /* Number of operations needed to complete the task */
-    private int arrayLength;    /* Size of the array used in the task */
+    private long time;                  /* Number of time used to complete the task in nanoseconds*/
+    private int operations;             /* Number of operations needed to complete the task */
+    private int arrayLength;            /* Size of the array used in the task */
+    private typeAlgorithm typeAlgorithm; /* Type of the algorithm use in the task */
 
     /**
      * Constructor function to initialize the Data object with time, operations and array size data.
+     * @param type Type of the algorithm use in the task
      * @param time Number of time used to complete the task
      * @param operations Number of operations needed to complete the task
      * @param arrayLength Size of the array used in the task
      */
-    public Data(long time, int operations, int arrayLength){
+    public Data(typeAlgorithm type, long time, int operations, int arrayLength){
+        this.typeAlgorithm = type;
         this.time = time;
         this.operations = operations;
         this.arrayLength = arrayLength;
@@ -59,5 +62,16 @@ public class Data {
     }
     public void setArrayLength(int arrayLength) {
         this.arrayLength = arrayLength;
+    }
+    public typeAlgorithm getTypeAlgorithm() {
+        return typeAlgorithm;
+    }
+    public void setTypeAlgorithm(typeAlgorithm typeAlgorithm) {
+        this.typeAlgorithm = typeAlgorithm;
+    }
+
+    @Override
+    public String toString(){
+        return "[" + "Algorithm:"+ typeAlgorithm.toString() + "; " + "time:" + time +"; operations:" + operations + "; array-length:" + arrayLength + "]";
     }
 }

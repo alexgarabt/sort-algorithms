@@ -35,6 +35,7 @@ public class SortAlgorithms {
         int h, r, i, j, w;
         r = tam-1;
         h = 1;
+        countOperations += 2;
         while (h <= r/9) {
             h = 3*h+1;
         }
@@ -42,16 +43,23 @@ public class SortAlgorithms {
             for (i = h; i <= r; i++) {
                 j = i;
                 w = v[i];
+
+                countOperations++;
                 while ((j >= h) && (w<v[j-h])) {
                     v[j] = v[j-h];
                     j = j - h;
+
+                    countOperations +=3;
                 }
+
                 v[j] = w;
+                countOperations++;
             }
             h = h / 3;
         }
         return countOperations;
     }
+
     /**
      * Sorts arrays of integers using the shellShort algorithm.
      * @param v array with the integers to sort.
@@ -75,8 +83,8 @@ public class SortAlgorithms {
         int countOperations = 0;
         if (l < r) {
             int m = (l + r) / 2;
-            mergeSortRec(v, w, l, m);
-            mergeSortRec(v, w, m + 1, r);
+            countOperations += mergeSortRec(v, w, l, m);
+            countOperations += mergeSortRec(v, w, m + 1, r);
             int ia = l;
             int ib = m + 1;
             int ic = l;
@@ -85,29 +93,34 @@ public class SortAlgorithms {
                     w[ic] = v[ia];
                     ia++;
                     ic++;
+                    countOperations++;
                 } else {
                     w[ic] = v[ib];
                     ib++;
                     ic++;
+
+                    countOperations +=2;
                 }
             }
             while (ia <= m) {
                 w[ic] = v[ia];
                 ia++;
                 ic++;
+                countOperations++;
             }
             while (ib <= r) {
                 w[ic] = v[ib];
                 ib++;
                 ic++;
+                countOperations ++;
             }
             for (int i = l; i <= r; i++) {
                 v[i] = w[i];
+                countOperations++;
             }
         }
         return countOperations;
     }
-
     /**
      * It sorts arrays of integers using the shellShort algorithm.
      * @param v array with the integers to sort.
@@ -128,7 +141,9 @@ public class SortAlgorithms {
                     v[i] = v[i + 1];
                     v[i + 1] = temp;
                     swapped = true;
+                    countOperations += 2;
                 }
+                countOperations++;
             }
             if (swapped == false) {
                 break;
@@ -141,7 +156,9 @@ public class SortAlgorithms {
                     v[i] = v[i + 1];
                     v[i + 1] = temp;
                     swapped = true;
+                    countOperations +=2;
                 }
+                countOperations++;
             }
             start = start + 1;
         }
@@ -177,6 +194,7 @@ public class SortAlgorithms {
         data.setArrayLength(array.length);
         data.setTime(timeElapsed);
         data.setOperations(operations);
+        data.setTypeAlgorithm(type);
         return data;
     }
     /**
