@@ -1,30 +1,48 @@
 import algorithm.*;
 import data.*;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
  * Launcher class is used to
  */
 public class Launcher {
+    public final static int maxRandomNumber = 100000;
+
     public static void main(String args[]){
 
+        System.out.println(measureRange(1,200));
 
-        Scanner scanner = new Scanner(System.in);
+    }
 
-        System.out.print("Introduce the length of the array: ");
-        int lengthArray = scanner.nextInt();
-        RandomIntArray randArray = new RandomIntArray(lengthArray,10000);
-        int[] arrayTest = randArray.getNextArray();
-        int[] ithArray = new int[lengthArray];
+    private static DataSet measureAllAlgorithms(int[] unOrderedArray){
+
+
+        DataSet dataSet = new DataSet();
         Data data;
+        int[] unOrderedArrayCopy = new int[unOrderedArray.length];
 
         for (typeAlgorithm type: typeAlgorithm.values()) {
-            System.arraycopy(arrayTest, 0, ithArray, 0, lengthArray);
-            data = SortAlgorithms.measureSortAlgorithm(type,ithArray);
-            System.out.println(data.toString());
+            System.arraycopy(unOrderedArray, 0, unOrderedArrayCopy, 0, unOrderedArray.length);
+            data = SortAlgorithms.measureSortAlgorithm(type,unOrderedArrayCopy);
+            dataSet.add(data);
         }
+        return dataSet;
 
+    }
+    private static DataSet measureRange(int inital, int last){
 
+        DataSet dataSet = new DataSet();
+        RandomIntArray randArray;
+        int[] arrayUnsorted;
+
+        for (int i=inital;i<=last;i++){
+            randArray = new RandomIntArray(i,maxRandomNumber);
+            arrayUnsorted = randArray.getNextArray();
+            dataSet.addAll(measureAllAlgorithms(arrayUnsorted));
+        }
+        return dataSet;
     }
 
 

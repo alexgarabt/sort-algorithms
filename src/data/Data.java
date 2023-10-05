@@ -10,7 +10,7 @@ import algorithm.typeAlgorithm;
  * @author Elena
  * @version 24/09/2023
  */
-public class Data {
+public class Data extends Object{
 
     private long time;                  /* Number of time used to complete the task in nanoseconds*/
     private int operations;             /* Number of operations needed to complete the task */
@@ -73,5 +73,14 @@ public class Data {
     @Override
     public String toString(){
         return "[" + "Algorithm:"+ typeAlgorithm.toString() + "; " + "time:" + time +"; operations:" + operations + "; array-length:" + arrayLength + "]";
+    }
+    /**
+     * Return if the provided Data object is equal to this one
+     * @param data Data to check if is equals
+     * @return if the two objects are equals
+     */
+    public boolean equals(Data data){
+        return ((this.getTime()==data.getTime()) && (this.getOperations()==data.getOperations())
+                && (this.getArrayLength()==data.getArrayLength()) && (this.getTypeAlgorithm()==data.getTypeAlgorithm()));
     }
 }
