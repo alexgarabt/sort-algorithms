@@ -8,36 +8,45 @@ import algorithm.typeAlgorithm;
  *
  * @author Alex
  * @author Elena
- * @version 24/09/2023
+ * @version 05/10/2023
  */
 public class Data extends Object{
 
     private long time;                  /* Number of time used to complete the task in nanoseconds*/
-    private int operations;             /* Number of operations needed to complete the task */
+    private int comparisons;           /* Number of comparisons needed to complete the task */
+    private int assignments;            /* Number of assignments needed to complete the task */
     private int arrayLength;            /* Size of the array used in the task */
-    private typeAlgorithm typeAlgorithm; /* Type of the algorithm use in the task */
+    private typeAlgorithm typeAlgorithm;/* Type of the algorithm use in the task */
+
+    //Used to be converted to a .csv file
+    public final static String[] headers = {"Type-Algorithm", "Time", "Comparisons", "Assignments", "Array-Size"};
+
 
     /**
      * Constructor function to initialize the Data object with time, operations and array size data.
      * @param type Type of the algorithm use in the task
      * @param time Number of time used to complete the task
-     * @param operations Number of operations needed to complete the task
+     * @param comparisons Number of operations needed to complete the task
+     * @param assignments Number of assignments needed to complete the task
      * @param arrayLength Size of the array used in the task
      */
-    public Data(typeAlgorithm type, long time, int operations, int arrayLength){
+    public Data(typeAlgorithm type, long time, int comparisons, int assignments, int arrayLength){
         this.typeAlgorithm = type;
         this.time = time;
-        this.operations = operations;
+        this.assignments = assignments;
+        this.comparisons = comparisons;
         this.arrayLength = arrayLength;
     }
+
     /**
      * Constructor function to initialize the Data object with time and operations data.
      * @param time Number of time used to complete the task
-     * @param operations Number of operations needed to complete the task
+     * @param comparisons Number of comparisons needed to complete the task
+     * @param assignments Number of assignments needed to complete the task
      */
-    public Data(long time, int operations){
+    public Data(long time, int comparisons, int assignments){
         this.time = time;
-        this.operations = operations;
+        this.comparisons = assignments;
     }
     /**
      * Constructor function to initialize empty the Data object.
@@ -51,11 +60,11 @@ public class Data extends Object{
     public void setTime(long time) {
         this.time = time;
     }
-    public int getOperations() {
-        return operations;
+    public int getComparisons() {
+        return comparisons;
     }
-    public void setOperations(int operations) {
-        this.operations = operations;
+    public void setComparisons(int comparisons) {
+        this.comparisons = comparisons;
     }
     public int getArrayLength() {
         return arrayLength;
@@ -69,18 +78,35 @@ public class Data extends Object{
     public void setTypeAlgorithm(typeAlgorithm typeAlgorithm) {
         this.typeAlgorithm = typeAlgorithm;
     }
+    public int getAssignments() {
+        return assignments;
+    }
+    public void setAssignments(int assignments) {
+        this.assignments = assignments;
+    }
 
     @Override
     public String toString(){
-        return "[" + "Algorithm:"+ typeAlgorithm.toString() + "; " + "time:" + time +"; operations:" + operations + "; array-length:" + arrayLength + "]";
+        return "[" + "Algorithm:"+ typeAlgorithm.toString() + "; " + "time:" + time +"; comparisons:" + comparisons +"; assignments:" + assignments + "; array-length:" + arrayLength + "]";
     }
+
+    /**
+     * Returns a String array as defined in the headers order to be used in a csv.
+     * @return Returns a String array.
+     */
+    public String[] dataToCSV(){
+        String[] result = {typeAlgorithm.toString(), String.valueOf(time), String.valueOf(comparisons), String.valueOf(assignments), String.valueOf(arrayLength)};
+        return result;
+    }
+
     /**
      * Return if the provided Data object is equal to this one
      * @param data Data to check if is equals
      * @return if the two objects are equals
      */
     public boolean equals(Data data){
-        return ((this.getTime()==data.getTime()) && (this.getOperations()==data.getOperations())
-                && (this.getArrayLength()==data.getArrayLength()) && (this.getTypeAlgorithm()==data.getTypeAlgorithm()));
+        return ((this.getTime()==data.getTime()) && (this.getComparisons()==data.getComparisons())
+                && (this.getAssignments()==data.getAssignments()) && (this.getArrayLength()==data.getArrayLength())
+                && (this.getTypeAlgorithm()==data.getTypeAlgorithm()));
     }
 }

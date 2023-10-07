@@ -22,8 +22,9 @@
     * Average-case time complexity is also **O(n log(n))**.
 
 ---
-## Data to analize:
-	* Time to sort the algorithm.
+## Data to analize: (data/)
+	* Type of the algorithm.
+    * Time to sort the algorithm.
 	* Operations need to sort (Comparations &  Assigments).
 	* Size of the array.
 
@@ -33,7 +34,9 @@
     2.1- Class with type of algorithms, (algorithm.typeAlgorithm).
     3- Class random array generator, (data.RandomIntArray).
     4- Class with the basic data to anlyze time complexity, (data.Data).
-    5- Package test is for test the sort methods.
+    5- Class contains the different data, (data.DataSet).
+    6- Class to write data as csv files, (csv.CsvWriterSimple).
+    7- Package test is for test the sort methods.
         * (test/ArraySorterSelector) Class contais the function contains the sort method to test.
         * (test/ArraySorterTest) is the actual class with the tests use the method in ArraySorter.
 
@@ -44,4 +47,4 @@
 	4- Draw the conclusions of time and operation complexity.
 
 ## TODO:
-    * IMPLEMENT the count of the basic operations in the sort algorithm. (algorithm.SorthAlgorithms)
+    * Take measures of the different sort algorithms and analize the time complexity.

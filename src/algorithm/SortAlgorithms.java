@@ -5,19 +5,15 @@ import java.time.Instant;
 import data.Data;
 
 /**
- * TODO
- *  * IMPLEMENT the count of the basic operations in the sort algorithms.
- */
-
-/**
  * SortAlgorithms class.
  * This class is to sort arrays of integers with Merge-Sort, Shell-Sort and Cocktail-Sort algorithms.
  * Every function return a Data object with the data used to complete the sort.
  *
  * @author Alex
  * @author Elena
- * @version 23/09/2023
+ * @version 05/10/2023
  * @see data.Data
+ * @see typeAlgorithm
  */
 public class SortAlgorithms {
 
@@ -27,46 +23,49 @@ public class SortAlgorithms {
      * Sorts arrays of integers using the shellShort algorithm.
      * @param v array with the integers to sort.
      * @param tam Length of the provided array.
-     * @return the number of basic operations used in the sort.
+     * @return Array of integers: the first positions is the number of the comparisons && the second position is the number of the assignments.
      */
-    public static int shellSort(int[] v, int tam){
-        int countOperations =0;
+    public static int[] shellSort(int[] v, int tam){
+        int countComparisons = 0;
+        int countAssignments = 0;
         /* v con índices de 0 a tam-1 */
         int h, r, i, j, w;
         r = tam-1;
         h = 1;
-        countOperations += 2;
         while (h <= r/9) {
             h = 3*h+1;
         }
         while ( h > 0 ) {
             for (i = h; i <= r; i++) {
                 j = i;
-                w = v[i];
 
-                countOperations++;
+                w = v[i];
+                countAssignments++;
+
                 while ((j >= h) && (w<v[j-h])) {
                     v[j] = v[j-h];
                     j = j - h;
 
-                    countOperations +=3;
+                    countAssignments++;
+                    countComparisons++;
                 }
+                countComparisons++;
 
                 v[j] = w;
-                countOperations++;
+                countAssignments++;
             }
             h = h / 3;
         }
-        return countOperations;
+        int[] result = {countComparisons,countAssignments};
+        return result;
     }
-
     /**
      * Sorts arrays of integers using the shellShort algorithm.
      * @param v array with the integers to sort.
      * @param tam Length of the provided array.
-     * @return the number of basic operations used in the sort.
+     * @return Array of integers: the first positions is the number of the comparisons && the second position is the number of the assignments.
      */
-    public static int mergeSort(int[] v, int tam) {
+    public static int[] mergeSort(int[] v, int tam) {
         /* v con índices de 0 a tam-1 */
         int w[] = new int[tam];
         return mergeSortRec(v, w, 0, tam - 1);
@@ -77,14 +76,24 @@ public class SortAlgorithms {
      * @param w a new empty array with the same size as v
      * @param l .
      * @param r length of the array
-     * @return the number of basic operations used in the sort.
+     * @return Array of integers: the first positions is the number of the comparisons && the second position is the number of the assignments.
+     *
      */
-    private static int mergeSortRec(int v[], int w[], int l, int r) {
-        int countOperations = 0;
+    private static int[] mergeSortRec(int v[], int w[], int l, int r) {
+        int countAssignments = 0;
+        int countComparisons = 0;
+        int temp[];
         if (l < r) {
             int m = (l + r) / 2;
-            countOperations += mergeSortRec(v, w, l, m);
-            countOperations += mergeSortRec(v, w, m + 1, r);
+
+            temp= mergeSortRec(v, w, l, m);
+            countComparisons += temp[0];
+            countAssignments += temp[1];
+
+            temp = mergeSortRec(v, w, m + 1, r);
+            countComparisons += temp[0];
+            countAssignments += temp[1];
+
             int ia = l;
             int ib = m + 1;
             int ic = l;
@@ -93,42 +102,44 @@ public class SortAlgorithms {
                     w[ic] = v[ia];
                     ia++;
                     ic++;
-                    countOperations++;
+                    countAssignments++;
                 } else {
                     w[ic] = v[ib];
                     ib++;
                     ic++;
-
-                    countOperations +=2;
+                    countAssignments++;
+                    countComparisons++;
                 }
             }
             while (ia <= m) {
                 w[ic] = v[ia];
                 ia++;
                 ic++;
-                countOperations++;
+                countAssignments++;
             }
             while (ib <= r) {
                 w[ic] = v[ib];
                 ib++;
                 ic++;
-                countOperations ++;
+                countAssignments++;
             }
             for (int i = l; i <= r; i++) {
                 v[i] = w[i];
-                countOperations++;
+                countAssignments++;
             }
         }
-        return countOperations;
+        int result[] = {countComparisons,countAssignments};
+        return result;
     }
     /**
      * It sorts arrays of integers using the shellShort algorithm.
      * @param v array with the integers to sort.
      * @param tam Length of the provided array.
-     * @return the number of basic operations used in the sort.
+     * @return Array of integers: the first positions is the number of the comparisons && the second position is the number of the assignments.
      */
-    public static int cocktailSort(int[] v, int tam){
-        int countOperations=0;
+    public static int[] cocktailSort(int[] v, int tam){
+        int countComparisons = 0;
+        int countAssignments = 0;
         /* v con índices de 0 a tam-1 */
         boolean swapped = true;
         int start = 0;
@@ -141,9 +152,9 @@ public class SortAlgorithms {
                     v[i] = v[i + 1];
                     v[i + 1] = temp;
                     swapped = true;
-                    countOperations += 2;
+                    countAssignments += 2;
                 }
-                countOperations++;
+                countComparisons++;
             }
             if (swapped == false) {
                 break;
@@ -156,13 +167,14 @@ public class SortAlgorithms {
                     v[i] = v[i + 1];
                     v[i + 1] = temp;
                     swapped = true;
-                    countOperations +=2;
+                    countAssignments += 3;
                 }
-                countOperations++;
+                countComparisons++;
             }
             start = start + 1;
         }
-        return countOperations;
+        int[] result = {countComparisons,countAssignments};
+        return result;
     }
 
 
@@ -174,13 +186,14 @@ public class SortAlgorithms {
      * @return a Data object with the time, length of the array and the operations used in the sort of the array.
      */
     public static Data measureSortAlgorithm(typeAlgorithm type, int[] array){
-        int operations;
+        int operations[];
         Data data = new Data();
 
         /* Starts to count the time*/
         Instant startCount = Instant.now();
         try {
             operations = executeSortAlgorithm(type,array);
+            //Contains the assignments and the comparisons.
         } catch (Exception e){
             e.printStackTrace();
             System.out.println(e.getMessage());
@@ -193,7 +206,8 @@ public class SortAlgorithms {
 
         data.setArrayLength(array.length);
         data.setTime(timeElapsed);
-        data.setOperations(operations);
+        data.setAssignments(operations[1]);
+        data.setComparisons(operations[0]);
         data.setTypeAlgorithm(type);
         return data;
     }
@@ -201,10 +215,10 @@ public class SortAlgorithms {
      * It executes the selected sort algorithm and returns the operations used.
      * @param type type of the sort algorithm to execute
      * @param array the array to be used in the sort algorithm.
-     * @return the number of operations used
+     * @return Array of integers: the first positions is the number of the comparisons && the second position is the number of the assignments.
      * @throws Exception when the type of algorithm is not implemented.
      */
-    public static int executeSortAlgorithm(typeAlgorithm type, int[] array) throws Exception{
+    public static int[] executeSortAlgorithm(typeAlgorithm type, int[] array) throws Exception{
 
         switch (type){
             case MERGE_SORT:

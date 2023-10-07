@@ -1,8 +1,12 @@
 package data;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
+import csv.CsvWriterSimple;
+
 
 /**
  * DataSet class, a custom list that implements ArrayList, so it have the same basic operations
@@ -11,6 +15,7 @@ import java.util.List;
  * @version 02/10/2023
  * @see Data
  * @see ArrayList
+ * @see csv.CsvWriterSimple
  */
 public class DataSet {
 
@@ -88,5 +93,25 @@ public class DataSet {
     }
     public Iterator<Data> iterator(){
         return this.list.iterator();
+    }
+
+    /**
+     * Creates a csv file and writes in it all the data inside this DataSet.
+     * @param filePath the file path with the path and name of the file
+     * @throws IOException if the file could not be created.
+     */
+    public void getFileCSV(String filePath) throws IOException{
+        System.out.println(filePath);
+        List<String[]> dataToWrite = new ArrayList<>();
+        //First one is the headers of the file
+        dataToWrite.add(Data.headers);
+
+        for(Data ith: this.list){
+            dataToWrite.add(ith.dataToCSV());
+        }
+        File file = new File(filePath);
+        CsvWriterSimple writer = new CsvWriterSimple();
+        writer.writeToCsvFile(dataToWrite, file);
+
     }
 }
