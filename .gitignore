@@ -33,4 +33,5 @@ Test.java
 .project
 .settings/
 ./bin
-
+# Libre office hidden files.
+.~lock.*

@@ -51,7 +51,7 @@ public class Launcher {
     }
     /**
      * Measures all the sort algorithms with a copy of the same unordered array
-     * @param UnorderedArray Array to sort with the different algorithms.
+     * @param unOrderedArray Array to sort with the different algorithms.
      * @return A DataSet object with the data of the measures. 
      */
     private static DataSet measureAllAlgorithms(int[] unOrderedArray){
