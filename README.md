@@ -15,9 +15,10 @@
     * Worst-case time complexity should be  **O(n^(3/2))**.
     * Best-case time complexity should be **O(n^2)**.
     * Average case time complexity is in the interval **[O(n^2), O(n^(3/2))]**.
-Complexity formula for time = **17,4413747094157*(n^(6/5))**  
-Complexity formula for comparisons = **3,751513396*(n^(6/5))**  
-Complexity formula for time = **4,948071144*(n^(6/5))**  
+  
+Complexity formula for time = **17,4413747094157(n^(6/5))**  [See](data/Shell-sort-Time.png)
+Complexity formula for comparisons = **3,751513396(n^(6/5))**  [See](data/Shell-sort-Comparisons.png)
+Complexity formula for assignments = **4,948071144(n^(6/5))**  [See](data/Shell-Assignments.png)
 
 
 ### Cocktail-sort => ordena2.
@@ -25,17 +26,19 @@ Complexity formula for time = **4,948071144*(n^(6/5))**
     * Worst-case time complexity is **O(n^2)**.
     * Best-case time complexity happends when the input is already or nearly sorted **O(n)**.
     * Average-case time complexity is **O(n^2)**.
-Complexity formula for time = **1,049089349*(n^2)**  
-Complexity formula for comparisons = **0,3770798664*(n^2)**  
-Complexity formula for time = **0,6247194668*(n^2)**  
+  
+Complexity formula for time = **1,129089349(n^2)**  [See](data/Cocktail-sort-Time.png)
+Complexity formula for comparisons = **0,3770798664(n^2)**  [See](data/Cocktail-sort-Comparisons.png)
+Complexity formula for assignments = **0,6847194668(n^2)**  [See](data/Cocktail-sort-Assignments.png)
 
 ### Merge-sort => ordena3. 
     * Worst-case time complexity is **O(n log(n))**.
     * Best-case time complexity is also **O(n log(n))**.
     * Average-case time complexity is also **O(n log(n))**.
-Complexity formula for time = **167050,967*(n log(n))**  
-Complexity formula for comparisons = **7544,089543*(n log(n))**  
-Complexity formula for assignments = **34174,13877*(n log(n))**  
+  
+Complexity formula for time = **37,35874024(n log(n))**  [See](data/Merge-sort-Time.png)
+Complexity formula for comparisons = **1,461899217(n log(n))**  [See](data/Merge-sort-Comparisons.png)
+Complexity formula for assignments = **6,694346692(n log(n))**  [See](data/Merge-sort-Assignments.png)
 
 ---
 ## Data to analize: (data/raw-measures.csv)
@@ -47,7 +50,7 @@ Complexity formula for assignments = **34174,13877*(n log(n))**
 ## Considerations about the data:
 We have used array filled with random numbers between 0-100000. (See)
 
-## How data was obtained & analyzed: (data/filered-data.xlsx)
+## How data was obtained & analyzed: (data/filtered-data.xlsx)
     1- Measure the data using the program developed -> data/raw-measures.csv
     2- Using google sheets, filter the data of each type of algorithm.
     3- Remove some first meditions due to they are not consistant with the data
@@ -62,7 +65,7 @@ We have used array filled with random numbers between 0-100000. (See)
 ---
 
 ## How to generate new measures:
-Compile the project and run the Launcher.
+Compile the project and run the Launcher.  
 <code>$ java Launcher</code>
 
 ## Project Strucuture:
@@ -82,11 +85,6 @@ Compile the project and run the Launcher.
 
 =SUBTOTAL(101; G4:G)
 
-# Formula for time constant
-=ARRAYFORMULA(SI(A2="Cocktail-sort"; C2/(B2^(2)); SI(A2="Shell-sort"; C2/(B2^(6/5)); SI(A1="Merge-sort"; C2/LOG(B2); ""))))
-
-# Formula for comparisons constant
-=ARRAYFORMULA(SI(A2="Cocktail-sort"; D2/(B2^(2)); SI(A2="Shell-sort"; D2/(B2^(6/5)); SI(A2="Merge-sort"; D2/LOG(B2); ""))))
-
+# Formula 
 # Formula for assignments
-=ARRAYFORMULA(SI(A2="Cocktail-sort"; E2/(B2^(2)); SI(A2="Shell-sort"; E2/(B2^(6/5)); SI(A2="Merge-sort"; E2/LOG(B2); ""))))
+=ARRAYFORMULA(SI(A2="Cocktail-sort"; C2/(B2^(2)); SI(A2="Shell-sort"; C2/(B2^(6/5)); SI(A2="Merge-sort"; C2/(B2*LOG(B2)); ""))))
