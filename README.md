@@ -16,9 +16,9 @@
     * Best-case time complexity should be **O(n^2)**.
     * Average case time complexity is in the interval **[O(n^2), O(n^(3/2))]**.
   
-Complexity formula for time = **17,4413747094157(n^(6/5))**  [See](data/Shell-sort-Time.png)
-Complexity formula for comparisons = **3,751513396(n^(6/5))**  [See](data/Shell-sort-Comparisons.png)
-Complexity formula for assignments = **4,948071144(n^(6/5))**  [See](data/Shell-Assignments.png)
+Complexity formula for time = **17,4413747094157(n^(6/5))**  [See](data/Shell-sort-Time.png)  
+Complexity formula for comparisons = **3,751513396(n^(6/5))**  [See](data/Shell-sort-Comparisons.png)  
+Complexity formula for assignments = **4,948071144(n^(6/5))**  [See](data/Shell-Assignments.png)  
 
 
 ### Cocktail-sort => ordena2.
@@ -27,18 +27,18 @@ Complexity formula for assignments = **4,948071144(n^(6/5))**  [See](data/Shell-
     * Best-case time complexity happends when the input is already or nearly sorted **O(n)**.
     * Average-case time complexity is **O(n^2)**.
   
-Complexity formula for time = **1,129089349(n^2)**  [See](data/Cocktail-sort-Time.png)
-Complexity formula for comparisons = **0,3770798664(n^2)**  [See](data/Cocktail-sort-Comparisons.png)
-Complexity formula for assignments = **0,6847194668(n^2)**  [See](data/Cocktail-sort-Assignments.png)
+Complexity formula for time = **1,129089349(n^2)**  [See](data/Cocktail-sort-Time.png)  
+Complexity formula for comparisons = **0,3770798664(n^2)**  [See](data/Cocktail-sort-Comparisons.png)  
+Complexity formula for assignments = **0,6847194668(n^2)**  [See](data/Cocktail-sort-Assignments.png)  
 
 ### Merge-sort => ordena3. 
     * Worst-case time complexity is **O(n log(n))**.
     * Best-case time complexity is also **O(n log(n))**.
     * Average-case time complexity is also **O(n log(n))**.
   
-Complexity formula for time = **37,35874024(n log(n))**  [See](data/Merge-sort-Time.png)
-Complexity formula for comparisons = **1,461899217(n log(n))**  [See](data/Merge-sort-Comparisons.png)
-Complexity formula for assignments = **6,694346692(n log(n))**  [See](data/Merge-sort-Assignments.png)
+Complexity formula for time = **37,35874024(n log(n))**  [See](data/Merge-sort-Time.png)  
+Complexity formula for comparisons = **1,461899217(n log(n))**  [See](data/Merge-sort-Comparisons.png)  
+Complexity formula for assignments = **6,694346692(n log(n))**  [See](data/Merge-sort-Assignments.png)  
 
 ---
 ## Data to analize: (data/raw-measures.csv)
