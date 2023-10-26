@@ -1,11 +1,13 @@
-# Analisis of sort algorithm
+# Analisis of sort algorithm time & operations complexity  
 
-## Time Complexity Sort Algorithms n = Array size
+*Sort algorithms: Shell, Cocktail, Merge*  
+**n == size of the array**  
+
+## Time Complexity Sort Algorithms
     1- Measured time.
     2- Measured Operations of sort.
         * Assignments.
         * Comparisons.
-
 
 ### Shell-sort => ordena1.
     * Complexity depends of the size of the gaps.
@@ -13,9 +15,9 @@
     * Worst-case time complexity should be  **O(n^(3/2))**.
     * Best-case time complexity should be **O(n^2)**.
     * Average case time complexity is in the interval **[O(n^2), O(n^(3/2))]**.
-Complexity formula for time = <bold>17,4413747094157*(n^(6/5))</bold>
-Complexity formula for comparisons = <bold>3,751513396*(n^(6/5))</bold>
-Complexity formula for time = <bold>4,948071144*(n^(6/5))</bold>
+Complexity formula for time = **17,4413747094157*(n^(6/5))**  
+Complexity formula for comparisons = **3,751513396*(n^(6/5))**  
+Complexity formula for time = **4,948071144*(n^(6/5))**  
 
 
 ### Cocktail-sort => ordena2.
@@ -23,17 +25,17 @@ Complexity formula for time = <bold>4,948071144*(n^(6/5))</bold>
     * Worst-case time complexity is **O(n^2)**.
     * Best-case time complexity happends when the input is already or nearly sorted **O(n)**.
     * Average-case time complexity is **O(n^2)**.
-Complexity formula for time = <bold>1,049089349*(n^2)</bold>
-Complexity formula for comparisons = <bold>0,3770798664*(n^2)</bold>
-Complexity formula for time = <bold>0,6247194668*(n^2)</bold>
+Complexity formula for time = **1,049089349*(n^2)**  
+Complexity formula for comparisons = **0,3770798664*(n^2)**  
+Complexity formula for time = **0,6247194668*(n^2)**  
 
 ### Merge-sort => ordena3. 
     * Worst-case time complexity is **O(n log(n))**.
     * Best-case time complexity is also **O(n log(n))**.
     * Average-case time complexity is also **O(n log(n))**.
-Complexity formula for time = <bold>167050,967*(n log(n))</bold>
-Complexity formula for comparisons = <bold>7544,089543*(n log(n))</bold>
-Complexity formula for assignments = <bold>34174,13877*(n log(n))</bold>
+Complexity formula for time = **167050,967*(n log(n))**  
+Complexity formula for comparisons = **7544,089543*(n log(n))**  
+Complexity formula for assignments = **34174,13877*(n log(n))**  
 
 ---
 ## Data to analize: (data/raw-measures.csv)
@@ -41,6 +43,9 @@ Complexity formula for assignments = <bold>34174,13877*(n log(n))</bold>
     * Time to sort the algorithm.
 	* Operations need to sort (Comparations &  Assigments).
 	* Size of the array.
+
+## Considerations about the data:
+We have used array filled with random numbers between 0-100000. (See)
 
 ## How data was obtained & analyzed: (data/filered-data.xlsx)
     1- Measure the data using the program developed -> data/raw-measures.csv
