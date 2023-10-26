@@ -19,7 +19,7 @@ public class Data extends Object{
     private typeAlgorithm typeAlgorithm;/* Type of the algorithm use in the task */
 
     //Used to be converted to a .csv file
-    public final static String[] headers = {"Type-Algorithm", "Time", "Comparisons", "Assignments", "Array-Size"};
+    public final static String[] headers = {"Type-Algorithm", "Time(ns)", "Comparisons", "Assignments", "Array-Size"};
 
 
     /**
@@ -87,7 +87,7 @@ public class Data extends Object{
 
     @Override
     public String toString(){
-        return "[" + "Algorithm:"+ typeAlgorithm.toString() + "; " + "time:" + time +"; comparisons:" + comparisons +"; assignments:" + assignments + "; array-length:" + arrayLength + "]";
+        return "[" + "Algorithm:"+ typeAlgorithm.toString() + "; " + "time(ns):" + time +"; comparisons:" + comparisons +"; assignments:" + assignments + "; array-length:" + arrayLength + "]";
     }
 
     /**
