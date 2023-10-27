@@ -1,15 +1,11 @@
 import algorithm.*;
 import data.*;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * Launcher class is used to measure the different sort algorithms in the algorithm package.
- * 
- * 
- * @author Alex
- * @author Elena
+ * LauncherMeasureSortAlgorithms class is used to measure and take data of the different sort algorithms in the algorithm package.
+ *
  * @version 07/10/2023
  * @see algorithm.SortAlgorithms
  * @see algorithm.typeAlgorithm
@@ -18,9 +14,13 @@ import java.util.Scanner;
  * @see data.RandomIntArray
  * 
  */
-public class Launcher {
+public class LauncherMeasureSortAlgorithms {
     public final static int maxRandomNumber = 100000;
 
+    /**
+     * Main function
+     * @param args
+     */
     public static void main(String args[]){
         Scanner scanner = new Scanner(System.in);
 

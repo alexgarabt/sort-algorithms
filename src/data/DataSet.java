@@ -10,8 +10,6 @@ import csv.CsvWriterSimple;
 
 /**
  * DataSet class, a custom list that implements ArrayList, so it have the same basic operations
- * @author Alex
- * @author Elena
  * @version 02/10/2023
  * @see Data
  * @see ArrayList

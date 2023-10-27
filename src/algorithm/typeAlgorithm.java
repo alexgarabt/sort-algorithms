@@ -3,8 +3,6 @@ package algorithm;
 /**
  * Enum class typeAlgorithm is used to enumerate the type of sort algorithms.
  *
- * @author Alex
- * @author Elena
  * @version 27/09/2023
  */
 public enum typeAlgorithm {

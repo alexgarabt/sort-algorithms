@@ -6,8 +6,6 @@ import java.util.Random;
  * RandomIntArray class. Generates a random array for a  specific range of numbers and length.
  * The range will be from 0 to upperBound. [0,upperbound] in Math notation.
  *
- * @author Alex
- * @author Elena
  * @version 23/09/2023
  */
 public class RandomIntArray {

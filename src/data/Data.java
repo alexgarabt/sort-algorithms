@@ -6,8 +6,6 @@ import algorithm.typeAlgorithm;
  * Stores: time to complete the task, number of "basic" operations of the algorithm to complete the task and
  * size of the array.
  *
- * @author Alex
- * @author Elena
  * @version 05/10/2023
  */
 public class Data extends Object{

@@ -197,6 +197,7 @@ public class SortAlgorithms {
         } catch (Exception e){
             e.printStackTrace();
             System.out.println(e.getMessage());
+            System.err.println(e.getMessage());
             return null;
         }
         /* Finish to count the time*/
@@ -219,7 +220,6 @@ public class SortAlgorithms {
      * @throws Exception when the type of algorithm is not implemented.
      */
     public static int[] executeSortAlgorithm(typeAlgorithm type, int[] array) throws Exception{
-
         switch (type){
             case MERGE_SORT:
                 return mergeSort(array,array.length);
