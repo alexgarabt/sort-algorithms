@@ -1,9 +1,9 @@
 # Analysis of sorts algorithm time & operations complexity  
 
 ## Sort algorithms: 
-* <a href=#shell-sort-ordena1>Shell sort</a> 
-* <a href=#cocktail-sort-ordena2>Cocktail sort</a> 
-* <a href=#merge-sort-ordena3>Merge sort</a>  
+* <a href=#shell-sort>Shell sort</a> 
+* <a href=#cocktail-sort>Cocktail sort</a> 
+* <a href=#merge-sort>Merge sort</a>  
 
 ## Project contents
 1- <a href=#developed-program>Program</a> that allow measure data from sort algorithms
