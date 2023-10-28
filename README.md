@@ -1,4 +1,4 @@
-# Analisis of sorts algorithm time & operations complexity  
+# Analysis of sorts algorithm time & operations complexity  
 
 ## Sort algorithms: 
 * <a href=#shell-sort-ordena1>Shell sort</a> 
