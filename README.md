@@ -119,7 +119,7 @@ File [raw-measures.csv](data/filtered-data.xlsx)
     6- Elaborate the complexity formula for every one.
 
 # Conclusions
-## Shell-sort => ordena1.
+## Shell sort
     * Complexity depends of the size of the gaps.
     * In this case is *(h = 3 * h + 1;)* .
     * Worst-case time complexity should be  **O(n^(3/2))**.
@@ -133,7 +133,7 @@ File [raw-measures.csv](data/filtered-data.xlsx)
 ![Shell sort complexity assignmets](data/graphs/Shell-sort-Assignments.png)  
 
 
-## Cocktail-sort => ordena2.
+## Cocktail sort
     * This algorithm is also know as Bidirectional Bubbel Sort.
     * Worst-case time complexity is **O(n^2)**.
     * Best-case time complexity happends when the input is already or nearly sorted **O(n)**.
@@ -145,7 +145,7 @@ File [raw-measures.csv](data/filtered-data.xlsx)
 ### Complexity formula for assignments = **0,6847194668(n^2)**  
 ![Cocktail sort complexity assingments](data/graphs/Cocktail-sort-Assignments.png)  
 
-## Merge-sort => ordena3. 
+## Merge sort
     * Worst-case time complexity is **O(n log(n))**.
     * Best-case time complexity is also **O(n log(n))**.
     * Average-case time complexity is also **O(n log(n))**.  
