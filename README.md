@@ -3,7 +3,7 @@
 ## Sort algorithms: Shell sort, Cocktail sort, Merge sort.  
 
 
-## Objective of the project
+## Project Objectives
 1- Develop a program that allows.
 
     * Measure each sort algorithm.  
@@ -27,12 +27,9 @@
     * The study and analysis of the measured data has been done with google spreadsheet similar to excel.
 ---
 
+# Developed program
 
-
-
-## Developed program
-
-#### Launcher:
+#### Launcher
 The [Launcher](src/LauncherMeasureSortAlgorithms.java), should be used to take measures of the [Sorts algorithms](src/algorithm/SortAlgorithms.java). 
 For every size is generated a new *"random array"*, and each sort algorithm uses a copy of these one.   
 It uses arrays filled with random numbers between [0-*maxRandomNumber*], **maxRandomNumber** is a static variable defined with in the Laucher class.  
@@ -40,16 +37,16 @@ The random arrays are generated with use of the class [RandomIntArray](src/data/
 Generated files will depend of the java project classpath used and the provided path for the file.    
 
 
-#### Unit Test
+#### Unit Test JUnit 4
 [Unit tests](src/test), test the different sort algorithms in the [src/algorithm/SortAlgorithms](src/algorithm/SortAlgorithms.java) with some edge cases.
 
     * Sort normal array.
     * Sort a empty array.
     * Sort a already sorted array.
     * Sort a array with duplicates.
+Using Junit4 and hamcrest-core libreries.
 
-
-#### Project Strucuture:
+#### Project Strucuture
     1- Class analyzer, (LauncherMeasureSortAlgorithms).
     2- Class with the sort algorithm, (algorithm.SortAlgorithms).
     2.1- Class with type of algorithms, (algorithm.typeAlgorithm).
@@ -61,57 +58,46 @@ Generated files will depend of the java project classpath used and the provided 
         * (test/SortAlgorithmsTest) is the class with the tests for the use the method in ArraySorter.
     8- Directory (data/) contains the raw measures and the analyzed ones & some graphs.
 
-### How to compile and run the project without using an IDE:
-##### Compile in a separate output directory
-*From the path of the project*  
-1- First create a output directory for the compiled program.  
-```
-    $ mkdir out  
-```
-2- Compile the program code of the src.  
-```
-    $ javac -d out -classpath .:src:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar -sourcepath src $(find . -name "*.java")  
-```
+## How to compile and run the project without using an IDE:
+Compile the project into a separate output directory  *(out/)* 
+From the root path of the project 
 
-### How to run the program
+1- Compile the program code of the src.  
 ```
-    $ cd out  
-    $ java LauncherMeasureSortAlgorithms  
+javac -d out -classpath .:src:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar -sourcepath src $(find . -name "*.java")  
 ```
-
+![Compile the project](img/compile-project.png)
+## How to run the program
+From the root of the project  
+```  
+java -cp .:out:src LauncherMeasureSortAlgorithms  
+```
+![Run the project](img/run-project.png)
 *Disclaimer:* Commands are writed as unix format, if there is any error check way should be in you OS.  
 
-##### Quick compile and run all in the same directory
-*From the path of the project*  
-*Using java make, but the test will not be compiled!! so test will not work.*  
-```
-    $ cd src/  
-    $ javac LauncherMeasureSortAlgorithms.java 
-    $ java LauncherMeasureSortAlgorithms  
-```
+## Quick compile and run all in the same directory
+From the path of the project  
+Using java make, but the test will not be compiled!! so you will have to compile it later. 
 
-#### How to run the test for sort algorithms
-*From the path of the project*  
-1- Once the project is compiled so test class also have.  
-```
-$ java -cp .:out:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar org.junit.runner.JUnitCore test.SortAlgorithmsTests  
+```  
+javac -cp .:src LauncherMeasureSortAlgorithms.java 
+java -cp .:src LauncherMeasureSortAlgorithms  
 ```
 
+## How to run unit tests
+1- From the root of the project with the compiled project 
+```
+java -cp .:src:out:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar org.junit.runner.JUnitCore test.SortAlgorithmsTests  
+```
+![Run the unit test](img/run-test)
 
----
-
-
-
-## Study of the generated data
+# Study of the generated data
 
 ## Data to analize: (data/raw-measures.csv)
     * Type of the algorithm.
     * Time to sort the algorithm.
     * Operations need to sort (Comparations &  Assigments).
     * Size of the array.
-
-## Considerations about the data:
-We have used array filled with random numbers between 0-100000. (SEE.
 
 ## How data was obtained & analyzed: (data/filtered-data.xlsx)
     1- Measure the data using the program developed -> data/raw-measures.csv
@@ -126,44 +112,43 @@ We have used array filled with random numbers between 0-100000. (SEE.
         * example of Cocktail-sort k(time)-> k = TIME/(n^2)
     6- Elaborate the complexity formula for every one.
 
-
-
----
-
-
-
-## Study of the generated data
-
-### Shell-sort => ordena1.
+# Conclusions
+## Shell-sort => ordena1.
     * Complexity depends of the size of the gaps.
     * In this case is *(h = 3 * h + 1;)* .
     * Worst-case time complexity should be  **O(n^(3/2))**.
     * Best-case time complexity should be **O(n^2)**.
     * Average case time complexity is in the interval **[O(n^2), O(n^(3/2))]**.
-  
-Complexity formula for time = **17,4413747094157(n^(6/5))**  [SEE.](data/graphs/Shell-sort-Time.png)  
-Complexity formula for comparisons = **3,751513396(n^(6/5))**  [SEE.](data/graphs/Shell-sort-Comparisons.png)  
-Complexity formula for assignments = **4,948071144(n^(6/5))**  [SEE.](data/graphs/Shell-Assignments.png)  
+### Complexity formula for time = **17,4413747094157(n^(6/5))**  
+![Shell sort complexity time](data/graphs/Shell-sort-Time.png)  
+### Complexity formula for comparisons = **3,751513396(n^(6/5))**  
+![Shell sort complexity comparisons](data/graphs/Shell-sort-Comparisons.png)  
+### Complexity formula for assignments = **4,948071144(n^(6/5))**  
+![Shell sort complexity assignmets](data/graphs/Shell-Assignments.png)  
 
 
-### Cocktail-sort => ordena2.
+## Cocktail-sort => ordena2.
     * This algorithm is also know as Bidirectional Bubbel Sort.
     * Worst-case time complexity is **O(n^2)**.
     * Best-case time complexity happends when the input is already or nearly sorted **O(n)**.
     * Average-case time complexity is **O(n^2)**.
-  
-Complexity formula for time = **1,129089349(n^2)**  [SEE.](data/graphs/Cocktail-sort-Time.png)  
-Complexity formula for comparisons = **0,3770798664(n^2)**  [SEE.](data/graphs/Cocktail-sort-Comparisons.png)  
-Complexity formula for assignments = **0,6847194668(n^2)**  [SEE.](data/graphs/Cocktail-sort-Assignments.png)  
+### Complexity formula for time = **1,129089349(n^2)**  
+![Cocktail sort complexity time](data/graphs/Cocktail-sort-Time.png)  
+### Complexity formula for comparisons = **0,3770798664(n^2)**  
+![Cocktail sort complexity comparisons](data/graphs/Cocktail-sort-Comparisons.png)  
+### Complexity formula for assignments = **0,6847194668(n^2)**  
+![Cocktail sort complexity assingments](data/graphs/Cocktail-sort-Assignments.png)  
 
-### Merge-sort => ordena3. 
+## Merge-sort => ordena3. 
     * Worst-case time complexity is **O(n log(n))**.
     * Best-case time complexity is also **O(n log(n))**.
-    * Average-case time complexity is also **O(n log(n))**.
-  
-Complexity formula for time = **37,35874024(n log(n))**  [SEE.(data/graphs/Merge-sort-Time.png)  
-Complexity formula for comparisons = **1,461899217(n log(n))**  [SEE.](data/graphs/Merge-sort-Comparisons.png)  
-Complexity formula for assignments = **6,694346692(n log(n))**  [SEE.](data/graphs/Merge-sort-Assignments.png)  
+    * Average-case time complexity is also **O(n log(n))**.  
+### Complexity formula for time = **37,35874024(n log(n))**  
+![Merge sort complexity time](data/graphs/Merge-sort-Time.png)  
+### Complexity formula for comparisons = **1,461899217(n log(n))**  
+![Merge sort complexity comparisons](data/graphs/Merge-sort-Comparisons.png)  
+### Complexity formula for assignments = **6,694346692(n log(n))**  
+![Merge sort complexity assignments](data/graphs/Merge-sort-Assignments.png)  
 
 
 
