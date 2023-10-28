@@ -95,23 +95,27 @@ Using Junit4 and hamcrest-core libreries.
 
 # Study of the generated data
 
-## Data to analize: (data/raw-measures.csv)
+## Data analyzed
+File [raw-measures.csv](data/raw-measures.csv)
+
     * Type of the algorithm.
     * Time to sort the algorithm.
     * Operations need to sort (Comparations &  Assigments).
     * Size of the array.
 
 ## How data was obtained & analyzed: (data/filtered-data.xlsx)
+File [raw-measures.csv](data/filtered-data.xlsx)
+
     1- Measure the data using the program developed -> data/raw-measures.csv
     2- Using google sheets, filter the data of each type of algorithm.
     3- Remove some first meditions due to they are not consistant with the data
         * Meditions with an array size less than 245.
     4- Find the complexity of each algorithm for each type of measure by bounding the data.
     5- Find the constant that muliply the complexity
-        1- k = operation/complexity.
+        1- K = operation/complexity.
         2- Do it for all the data
         3- Get the average k for each one of the types of measures for each type of algorithm.
-        * example of Cocktail-sort k(time)-> k = TIME/(n^2)
+        4- Example of Cocktail-sort K(time)-> K = TIME/(n^2)
     6- Elaborate the complexity formula for every one.
 
 # Conclusions
