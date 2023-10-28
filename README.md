@@ -62,42 +62,40 @@ Generated files will depend of the java project classpath used and the provided 
     8- Directory (data/) contains the raw measures and the analyzed ones & some graphs.
 
 ### How to compile and run the project without using an IDE:
-
 ##### Compile in a separate output directory
 *From the path of the project*  
-
 1- First create a output directory for the compiled program.  
-<code>
-$ mkdir out  
-</code>
+```
+    $ mkdir out  
+```
 2- Compile the program code of the src.  
-<code>
-$ javac -d out -classpath .:src:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar -sourcepath src $(find . -name "*.java")  
-</code>
+```
+    $ javac -d out -classpath .:src:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar -sourcepath src $(find . -name "*.java")  
+```
 
 ### How to run the program
-<code>
-$ cd out  
-$ java LauncherMeasureSortAlgorithms  
-</code>
+```
+    $ cd out  
+    $ java LauncherMeasureSortAlgorithms  
+```
 
 *Disclaimer:* Commands are writed as unix format, if there is any error check way should be in you OS.  
 
 ##### Quick compile and run all in the same directory
 *From the path of the project*  
 *Using java make, but the test will not be compiled!! so test will not work.*  
-<code>
+```
     $ cd src/  
     $ javac LauncherMeasureSortAlgorithms.java 
     $ java LauncherMeasureSortAlgorithms  
-</code>
+```
 
 #### How to run the test for sort algorithms
 *From the path of the project*  
 1- Once the project is compiled so test class also have.  
-<code>
+```
 $ java -cp .:out:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar org.junit.runner.JUnitCore test.SortAlgorithmsTests  
-</code>
+```
 
 
 ---
