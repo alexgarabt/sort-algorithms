@@ -1,16 +1,18 @@
 # Analisis of sorts algorithm time & operations complexity  
 
-## Sort algorithms: Shell sort, Cocktail sort, Merge sort.  
+## Sort algorithms: 
+* <a href=#shell-sort-ordena1>Shell sort</a> 
+* <a href=#cocktail-sort-ordena2>Cocktail sort</a> 
+* <a href=#merge-sort-ordena3>Merge sort</a>  
 
-
-## Project Objectives
-1- Develop a program that allows.
+## Project contents
+1- <a href=#developed-program>Program</a> that allow measure data from sort algorithms
 
     * Measure each sort algorithm.  
     * Measure the data related with the complexity of sort algorithms.  
 
-2- Filter, analyze and study the measured data.  
-3- Extract conclusions about the complexity of the sort algorithms.
+2- <a href=#study-of-the-generated-data>Filtered, analyzed and studied</a> the measured data.  
+3- <a href=#conclusions>Extracted conclusions</a>  about the complexity of the sort algorithms.
 
 
 ### Data that will be studied
@@ -28,6 +30,38 @@
 ---
 
 # Developed program
+## How to compile and run the project without using an IDE:
+Compile the project into a separate output directory  *(out/)* 
+From the root path of the project 
+
+1- Compile the program code of the src.  
+```
+javac -d out -classpath .:src:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar -sourcepath src $(find . -name "*.java")  
+```
+![Compile the project](img/compile-project.png)
+## How to run the program
+From the root of the project  
+```  
+java -cp .:out:src LauncherMeasureSortAlgorithms  
+```
+![Run the project](img/run-program.png)
+*Disclaimer:* Commands are writed as unix format, if there is any error check way should be in you OS.  
+
+## Quick compile and run all in the same directory
+From the path of the project  
+Using java make, but the test will not be compiled!! so you will have to compile it later. 
+
+```  
+javac -cp .:src LauncherMeasureSortAlgorithms.java 
+java -cp .:src LauncherMeasureSortAlgorithms  
+```
+
+## How to run unit tests
+1- From the root of the project with the compiled project 
+```
+java -cp .:src:out:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar org.junit.runner.JUnitCore test.SortAlgorithmsTests  
+```
+![Run the unit test](img/run-test.png)
 
 #### Launcher
 The [Launcher](src/LauncherMeasureSortAlgorithms.java), should be used to take measures of the [Sorts algorithms](src/algorithm/SortAlgorithms.java). 
@@ -58,38 +92,6 @@ Using Junit4 and hamcrest-core libreries.
         * (test/SortAlgorithmsTest) is the class with the tests for the use the method in ArraySorter.
     8- Directory (data/) contains the raw measures and the analyzed ones & some graphs.
 
-## How to compile and run the project without using an IDE:
-Compile the project into a separate output directory  *(out/)* 
-From the root path of the project 
-
-1- Compile the program code of the src.  
-```
-javac -d out -classpath .:src:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar -sourcepath src $(find . -name "*.java")  
-```
-![Compile the project](img/compile-project.png)
-## How to run the program
-From the root of the project  
-```  
-java -cp .:out:src LauncherMeasureSortAlgorithms  
-```
-![Run the project](img/run-project.png)
-*Disclaimer:* Commands are writed as unix format, if there is any error check way should be in you OS.  
-
-## Quick compile and run all in the same directory
-From the path of the project  
-Using java make, but the test will not be compiled!! so you will have to compile it later. 
-
-```  
-javac -cp .:src LauncherMeasureSortAlgorithms.java 
-java -cp .:src LauncherMeasureSortAlgorithms  
-```
-
-## How to run unit tests
-1- From the root of the project with the compiled project 
-```
-java -cp .:src:out:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar org.junit.runner.JUnitCore test.SortAlgorithmsTests  
-```
-![Run the unit test](img/run-test)
 
 # Study of the generated data
 
@@ -124,7 +126,7 @@ java -cp .:src:out:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar org.junit.runn
 ### Complexity formula for comparisons = **3,751513396(n^(6/5))**  
 ![Shell sort complexity comparisons](data/graphs/Shell-sort-Comparisons.png)  
 ### Complexity formula for assignments = **4,948071144(n^(6/5))**  
-![Shell sort complexity assignmets](data/graphs/Shell-Assignments.png)  
+![Shell sort complexity assignmets](data/graphs/Shell-sort-Assignments.png)  
 
 
 ## Cocktail-sort => ordena2.
