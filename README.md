@@ -104,7 +104,7 @@ File [raw-measures.csv](data/raw-measures.csv)
     * Size of the array.
 
 ## How data was obtained & analyzed: (data/filtered-data.xlsx)
-File [raw-measures.csv](data/filtered-data.xlsx)
+File [filtered-data.xlsx](data/filtered-data.xlsx)
 
     1- Measure the data using the program developed -> data/raw-measures.csv
     2- Using google sheets, filter the data of each type of algorithm.
