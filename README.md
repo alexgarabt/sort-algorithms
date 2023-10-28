@@ -117,6 +117,7 @@ File [raw-measures.csv](data/filtered-data.xlsx)
         3- Get the average k for each one of the types of measures for each type of algorithm.
         4- Example of Cocktail-sort K(time)-> K = TIME/(n^2)
     6- Elaborate the complexity formula for every one.
+![Data filtered](img/data.png)
 
 # Conclusions
 ## Shell sort
