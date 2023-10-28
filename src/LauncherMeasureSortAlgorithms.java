@@ -27,7 +27,7 @@ public class LauncherMeasureSortAlgorithms {
         DataSet dataSet;
         int initRange, finalRange;
 
-        System.out.print("Introduce the range of array size to study the sort algorithms\n Start number: ");
+        System.out.print("Introduce the range of array size to study for sort algorithms\n Start number: ");
         initRange = scanner.nextInt();
         System.out.print(" End number: ");
         finalRange = scanner.nextInt();

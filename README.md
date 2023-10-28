@@ -4,11 +4,13 @@
 
 
 ## Objective of the project
-1- Develop a program that allows. -> <a href=#program>Jump to</a>  
+1- Develop a program that allows.
+
     * Measure each sort algorithm.  
     * Measure the data related with the complexity of sort algorithms.  
-2- Filter, analyze and study the measured data. -> <a href=#study>Jump to</a>
-3- Extract conclusions about the complexity of the sort algorithms. -> <a href=#conclusions> Jump to</a>
+
+2- Filter, analyze and study the measured data.  
+3- Extract conclusions about the complexity of the sort algorithms.
 
 
 ### Data that will be studied
@@ -26,25 +28,19 @@
 ---
 
 
-<div id=program>
+
 
 ## Developed program
 
-## How to generate new measures:
-Compile the project and run the LauncherMeasureSortAlgorithms.  
-<code>$ java LauncherMeasureSortAlgorithms</code>
-
-### How to compile the project:
-
-### Launcher:
-The [Launcher](src/LauncherMeasureSortAlgorithms.java), it should be used to take measures of the [sorts algorithms](src/algorithm/SortAlgorithms.java). 
-
+#### Launcher:
+The [Launcher](src/LauncherMeasureSortAlgorithms.java), should be used to take measures of the [Sorts algorithms](src/algorithm/SortAlgorithms.java). 
 For every size is generated a new *"random array"*, and each sort algorithm uses a copy of these one.   
-It uses arrays filled with random numbers between [0-*maxRandomNumber*], *maxRandomNumber* is a static variable defined with in the Laucher class.  
+It uses arrays filled with random numbers between [0-*maxRandomNumber*], **maxRandomNumber** is a static variable defined with in the Laucher class.  
 The random arrays are generated with use of the class [RandomIntArray](src/data/RandomIntArray.java).  
+Generated files will depend of the java project classpath used and the provided path for the file.    
 
 
-### Unit Test
+#### Unit Test
 [Unit tests](src/test), test the different sort algorithms in the [src/algorithm/SortAlgorithms](src/algorithm/SortAlgorithms.java) with some edge cases.
 
     * Sort normal array.
@@ -53,7 +49,7 @@ The random arrays are generated with use of the class [RandomIntArray](src/data/
     * Sort a array with duplicates.
 
 
-## Project Strucuture:
+#### Project Strucuture:
     1- Class analyzer, (LauncherMeasureSortAlgorithms).
     2- Class with the sort algorithm, (algorithm.SortAlgorithms).
     2.1- Class with type of algorithms, (algorithm.typeAlgorithm).
@@ -65,13 +61,48 @@ The random arrays are generated with use of the class [RandomIntArray](src/data/
         * (test/SortAlgorithmsTest) is the class with the tests for the use the method in ArraySorter.
     8- Directory (data/) contains the raw measures and the analyzed ones & some graphs.
 
+### How to compile and run the project without using an IDE:
 
+##### Compile in a separate output directory
+*From the path of the project*  
 
-</div>
+1- First create a output directory for the compiled program.  
+<code>
+$ mkdir out  
+</code>
+2- Compile the program code of the src.  
+<code>
+$ javac -d out -classpath .:src:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar -sourcepath src $(find . -name "*.java")  
+</code>
+
+### How to run the program
+<code>
+$ cd out  
+$ java LauncherMeasureSortAlgorithms  
+</code>
+
+*Disclaimer:* Commands are writed as unix format, if there is any error check way should be in you OS.  
+
+##### Quick compile and run all in the same directory
+*From the path of the project*  
+*Using java make, but the test will not be compiled!! so test will not work.*  
+<code>
+    $ cd src/  
+    $ javac LauncherMeasureSortAlgorithms.java 
+    $ java LauncherMeasureSortAlgorithms  
+</code>
+
+#### How to run the test for sort algorithms
+*From the path of the project*  
+1- Once the project is compiled so test class also have.  
+<code>
+$ java -cp .:out:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar org.junit.runner.JUnitCore test.SortAlgorithmsTests  
+</code>
+
 
 ---
 
-<div id=study>
+
 
 ## Study of the generated data
 
@@ -97,11 +128,11 @@ We have used array filled with random numbers between 0-100000. (SEE.
         * example of Cocktail-sort k(time)-> k = TIME/(n^2)
     6- Elaborate the complexity formula for every one.
 
-</div>
+
 
 ---
 
-<div id=conclusions>
+
 
 ## Study of the generated data
 
@@ -137,5 +168,5 @@ Complexity formula for comparisons = **1,461899217(n log(n))**  [SEE.](data/grap
 Complexity formula for assignments = **6,694346692(n log(n))**  [SEE.](data/graphs/Merge-sort-Assignments.png)  
 
 
-</div>
+
 
