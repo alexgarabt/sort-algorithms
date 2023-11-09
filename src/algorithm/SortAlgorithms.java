@@ -49,7 +49,10 @@ public class SortAlgorithms {
                     countAssignments++;
                     countComparisons++;
                 }
-                countComparisons++;
+                if(j<=h){
+                    countComparisons++;
+                }
+                
 
                 v[j] = w;
                 countAssignments++;
@@ -108,8 +111,9 @@ public class SortAlgorithms {
                     ib++;
                     ic++;
                     countAssignments++;
-                    countComparisons++;
+                    
                 }
+                countComparisons++;
             }
             while (ia <= m) {
                 w[ic] = v[ia];
@@ -152,7 +156,7 @@ public class SortAlgorithms {
                     v[i] = v[i + 1];
                     v[i + 1] = temp;
                     swapped = true;
-                    countAssignments += 2;
+                    countAssignments += 3;
                 }
                 countComparisons++;
             }

@@ -123,8 +123,8 @@ File [raw-measures.csv](data/filtered-data.xlsx)
 ## Shell sort
     * Complexity depends of the size of the gaps.
     * In this case is *(h = 3 * h + 1;)* .
-    * Worst-case time complexity should be  **O(n^(3/2))**.
-    * Best-case time complexity should be **O(n^2)**.
+    * Worst-case time complexity should be  **O(n^2)**.
+    * Best-case time complexity should be **O(n^(3/2))**.
     * Average case time complexity is in the interval **[O(n^2), O(n^(3/2))]**.
 ### Complexity formula for time = **17,4413747094157(n^(6/5))**  
 ![Shell sort complexity time](data/graphs/Shell-sort-Time.png)  
